@@ -17,8 +17,10 @@ name: 'MiniMax Code Review'
 # job's `needs`, and neither blocks a merge. The deterministic gate stays the CI
 # workflow (bundle exec rspec on Ruby 3.2 and 3.3, bundle exec rubocop).
 # REVIEW.md at the repo root is the reviewer law; both system prompts below are
-# distillations of it for a diff-scoped reviewer. The action fetches the PR diff
-# through the API and never checks out or executes pull-request code.
+# distillations of it for a diff-scoped reviewer. This workflow adds no checkout
+# step, so nothing here builds or executes pull-request code; what the pinned
+# action itself does internally is a property of that pinned commit, not of this
+# file.
 #
 # The action is our maintained fork (jeremylongshore/minimax-code-review),
 # SHA-pinned per supply-chain policy: it adds per-reviewer sticky comments
