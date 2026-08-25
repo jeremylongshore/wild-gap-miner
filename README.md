@@ -8,6 +8,8 @@ Part of the **[wild ecosystem](https://github.com/intent-solutions-io/wild-rails
 
 ---
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U5S225PTME)
+
 ## What It Does
 
 `wild-gap-miner` ingests JSON Lines telemetry exports from `wild-session-telemetry` and surfaces capability gaps: tools that fail too often, actions that get denied, latency outliers, low-coverage callers, and recurring failure patterns.
