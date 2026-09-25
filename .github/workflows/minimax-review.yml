@@ -55,8 +55,8 @@ concurrency:
   cancel-in-progress: true
 
 # Vendored, packaged, and generated paths are excluded from both lanes so review
-# tokens go to human-authored Ruby only. Gemfile.lock is gitignored here (a
-# library gem does not commit one), but it is listed defensively.
+# tokens go to human-authored Ruby only. Gemfile.lock is committed for CI
+# reproducibility but is generated, so it is excluded from review.
 env:
   EXCLUDES: 'Gemfile.lock,*.gem,vendor/**,.bundle/**,pkg/**,.beads/*.jsonl,.rspec_status'
 
@@ -151,7 +151,7 @@ jobs:
             do not ask for type signatures; do not restate rspec output; and do not
             re-litigate the pipeline layout of ingestion, models, analyzers,
             scoring, recommendations, report, and export. Also flag a diff that
-            commits a gitignored artifact (Gemfile.lock, vendor, .bundle, pkg, a
+            commits a gitignored artifact (vendor, .bundle, pkg, a
             built .gem, .rspec_status, .beads) or a version asserted in README or
             CHANGELOG that disagrees with lib/wild_gap_miner/version.rb.
             ANTI-RATCHET: on a re-review after new pushes the bar does not rise,
